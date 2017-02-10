@@ -1,4 +1,4 @@
-class ExTypePolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   def index?
     admin?
   end
@@ -8,7 +8,7 @@ class ExTypePolicy < ApplicationPolicy
   end
   
   def edit?
-    admin?
+    admin? || oneself?
   end
   
   def update?
@@ -27,5 +27,11 @@ class ExTypePolicy < ApplicationPolicy
     def resolve
       scope
     end
+  end
+
+  private
+
+  def oneself?
+    user == record
   end
 end

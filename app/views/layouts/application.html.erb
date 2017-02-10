@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+    </header>
+    <content>
+      <menu>
+        <%= render '/application/menu' %>
+      </menu>
+      <main>
+        <%= yield %>
+      </main>
+    </content>
+    <footer>
+    </footer>
   </body>
 </html>

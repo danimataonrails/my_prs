@@ -51,4 +51,11 @@ class ApplicationPolicy
       scope
     end
   end
+
+  protected
+
+  def admin?
+    Rails.logger.info user.inspect
+    user.is_admin?
+  end
 end

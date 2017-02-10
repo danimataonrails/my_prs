@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :ex_types do
         resources :exercises
       end
+      resources :exercises
       resources :marks
     end
   end
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :ex_types do
     resources :exercises
   end
+  resources :exercises
   resources :marks
 
 end

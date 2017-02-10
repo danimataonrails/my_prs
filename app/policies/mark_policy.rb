@@ -1,14 +1,14 @@
-class ExTypePolicy < ApplicationPolicy
+class MarkPolicy < ApplicationPolicy
   def index?
-    admin?
+    true
   end
   
   def create?
-    admin?
+    true
   end
   
   def edit?
-    admin?
+    record.user == user
   end
   
   def update?
@@ -20,12 +20,16 @@ class ExTypePolicy < ApplicationPolicy
   end
   
   def destroy?
-    admin?
+    edit?
   end
 
   class Scope < Scope
     def resolve
-      scope
+      if admin?
+        scope
+      else
+        scope.by_user(user)
+      end
     end
   end
 end

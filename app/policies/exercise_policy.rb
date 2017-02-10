@@ -1,4 +1,4 @@
-class ExTypePolicy < ApplicationPolicy
+class ExercisePolicy < ApplicationPolicy
   def index?
     admin?
   end
