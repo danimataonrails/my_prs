@@ -28,4 +28,10 @@ class ExTypePolicy < ApplicationPolicy
       scope
     end
   end
+
+  def permitted_attributes
+    if admin?
+      [:name, :code]
+    end
+  end
 end

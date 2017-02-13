@@ -16,6 +16,8 @@ gem 'yajl-ruby'
 gem 'devise'
 gem 'pundit'
 
+gem 'kaminari', '~> 0.15.1'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'spring'

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyPrs</title>
+    <title><%= content_for?(:title) ? yield(:title) : 'My PRs' %></title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +14,7 @@
     </header>
     <content>
       <menu>
-        <%= render '/application/menu' %>
+        <%= render '/application/menu' if user_signed_in? %>
       </menu>
       <main>
         <%= yield %>

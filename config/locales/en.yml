@@ -1,2 +1,19 @@
 en:
+  application:
+    menu:
+      ex_types: Exercise Types
+      exercises: Exercises
+      logout: Sign out
+      marks: Marks
+      profile: Profile
+      users: Users
+  ex_types:
+    index: 
+      code: Code
+      title: Exercise Types
+      name: Name
+      new: New exercise types
+      no_data: No exercise types
+    new:
+      title: New Exercise Type
   hello: "Hello"

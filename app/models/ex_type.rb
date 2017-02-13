@@ -10,4 +10,9 @@
 #
 
 class ExType < ApplicationRecord
+  #include Translatable
+
+  has_many :exercises
+
+  #translate :name
 end

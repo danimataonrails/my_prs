@@ -1,0 +1,8 @@
+<h1><%= title t('.title') %></h1>
+<%= flash_messages %>
+<%= link_to(t('.new'), new_ex_type_path) if policy(ExType).new? %>
+<table>
+<%= table_head_for :ex_types, [:code, :name] %>
+<%= table_rows_for @ex_types, [:code, :name] %>
+</table>
+<%= paginate @ex_types %>

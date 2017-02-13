@@ -1,4 +1,5 @@
 <ul>
   <%= menu_options_for [:ex_type, :exercise, :mark, :user] %>
   <%= menu_option t('.profile'), edit_user_path(current_user) if policy(current_user).edit? %>
+  <%= menu_option t('.logout'), destroy_user_session_path, method: :delete %>
 </ul>
