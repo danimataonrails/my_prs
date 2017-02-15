@@ -1,9 +1,3 @@
 <h1><%= title t('.title') %></h1>
 <%= flash_messages %>
-<%= form_for @ex_type do |f| %>
-  <%= f.label :code %>
-  <%= f.text_field :code, size: 4, maxlength: 4 %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= submit_or_cancel %>
-<% end %>
+<%= render 'form' %>

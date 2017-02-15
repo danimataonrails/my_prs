@@ -21,6 +21,8 @@ en:
   ex_types:
     code: Code
     name: Name
+    edit:
+      title: Edit %{name}
     index: 
       title: Exercise Types
       new: New exercise type

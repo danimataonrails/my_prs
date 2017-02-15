@@ -28,8 +28,23 @@ class ExTypesController < ApplicationController
     end
   end
   
-  def destroy
+  def show
     authorize @ex_type, :show?
+  end
+  
+  def edit
+    authorize @ex_type, :edit?
+  end
+  
+  def update
+    authorize @ex_type, :update?
+    if @ex_type.update_attributes(ex_type_params)
+      flash[:notice] = ''
+      redirect_to ex_types_path
+    else
+      flash[:errors] = @ex_type.errors.full_messages
+      render :edit
+    end
   end
   
   def destroy
