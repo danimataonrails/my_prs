@@ -1,8 +1,9 @@
 <h1><%= title t('.title') %></h1>
 <%= flash_messages %>
-<%= link_to(t('.new'), new_ex_type_path) if policy(ExType).new? %>
-<table>
-<%= table_head_for :ex_types, [:code, :name] %>
-<%= table_rows_for @ex_types, [:code, :name] %>
-</table>
-<%= paginate @ex_types %>
+<%= form_for @ex_type do |f| %>
+  <%= f.label :code %>
+  <%= f.text_field :code, size: 4, maxlength: 4 %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= submit_or_cancel %>
+<% end %>

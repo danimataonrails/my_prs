@@ -1,4 +1,15 @@
-en:
+en: 
+  actions:
+    destroy: Destroy
+    edit: Edit
+    cancel: Cancel
+    show: Show
+    submit: Submit
+  activerecord:
+    attributes:
+      ex_type:
+        code: Code
+        name: Name
   application:
     menu:
       ex_types: Exercise Types
@@ -8,11 +19,11 @@ en:
       profile: Profile
       users: Users
   ex_types:
+    code: Code
+    name: Name
     index: 
-      code: Code
       title: Exercise Types
-      name: Name
-      new: New exercise types
+      new: New exercise type
       no_data: No exercise types
     new:
       title: New Exercise Type

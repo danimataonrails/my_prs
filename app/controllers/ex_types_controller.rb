@@ -17,10 +17,10 @@ class ExTypesController < ApplicationController
   end
   
   def create
-    authorize :ex_type, :create?
     @ex_type = ExType.new(ex_type_params)
+    authorize @ex_type, :create?
     if @ex_type.save
-      flash[:notice]
+      flash[:notice] = ''
       redirect_to ex_types_path
     else
       flash[:errors] = @ex_type.errors.full_messages
@@ -28,10 +28,24 @@ class ExTypesController < ApplicationController
     end
   end
   
+  def destroy
+    authorize @ex_type, :show?
+  end
+  
+  def destroy
+    authorize @ex_type, :destroy?
+    if @ex_type.destroy
+      flash[:notice] = ''
+    else
+      flash[:errors] = ''
+    end
+    redirect_to ex_types_path
+  end
+  
   private
   
   def load_ex_type
-    @ex_type = params.has_key?(:id) ? policy(:ex_type).scope.find(params[:id]) : nil
+    @ex_type = params.has_key?(:id) ? policy_scope(ExType).find(params[:id]) : nil
   end
 
   def load_ex_types
@@ -39,6 +53,6 @@ class ExTypesController < ApplicationController
   end
 
   def ex_type_params
-    params.require(:ex_type).permit(policy(@ex_type).permitted_attributes)
+    params.require(:ex_type).permit(policy(:ex_type).permitted_attributes)
   end
 end
