@@ -58,6 +58,10 @@ module LayoutHelper
       end.join.html_safe
     end
   end
+  
+  def model_options(klass)
+    policy_scope(klass.all).map{|k| [k.name, k.id]}
+  end
 
   def flash_messages
   end

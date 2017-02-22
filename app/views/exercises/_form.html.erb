@@ -1,0 +1,9 @@
+<%= form_for @exercise do |f| %>
+  <%= f.label :ex_type_id %>
+  <%= f.select :ex_type_id, model_options(ExType) %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= submit_or_cancel %>
+<% end %>

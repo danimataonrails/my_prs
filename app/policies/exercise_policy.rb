@@ -28,4 +28,10 @@ class ExercisePolicy < ApplicationPolicy
       scope
     end
   end
+
+  def permitted_attributes
+    if admin?
+      [:name, :description, :ex_type_id]
+    end
+  end
 end

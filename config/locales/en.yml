@@ -7,6 +7,10 @@ en:
     submit: Submit
   activerecord:
     attributes:
+      exercise:
+        description: Description
+        ex_type_id: Type
+        name: Name
       ex_type:
         code: Code
         name: Name
@@ -18,6 +22,19 @@ en:
       marks: Marks
       profile: Profile
       users: Users
+  exercises:
+    description: Description
+    ex_type: Type
+    ex_type_name: Type
+    name: Name
+    edit:
+      title: Edit %{name}
+    index: 
+      title: Exercises
+      new: New exercise
+      no_data: No exercises
+    new:
+      title: New Exercise
   ex_types:
     code: Code
     name: Name

@@ -1,0 +1,3 @@
+<h1><%= title @exercise.name %></h1>
+<%= fields_for @exercise, [:ex_type_name, :name, :description], :exercises %>
+<%= cancel_link %>

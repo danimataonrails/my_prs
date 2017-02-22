@@ -1,0 +1,8 @@
+<h1><%= title t('.title') %></h1>
+<%= flash_messages %>
+<%= link_to(t('.new'), new_exercise_path) if policy(Exercise).new? %>
+<table>
+<%= table_head_for :exercises, [:ex_type, :name] %>
+<%= table_rows_for @exercises, [:ex_type_name, :name] %>
+</table>
+<%= paginate @exercises %>
