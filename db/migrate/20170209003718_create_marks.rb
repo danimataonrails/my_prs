@@ -1,7 +1,7 @@
 class CreateMarks < ActiveRecord::Migration[5.0]
   def change
     create_table :marks do |t|
-      t.references :exerecise
+      t.references :exercise, index: true
       t.date :acomplished_at, null: false
       t.string :acomplished_in
       t.time :ac_time

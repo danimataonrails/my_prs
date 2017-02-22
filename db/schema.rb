@@ -23,16 +23,16 @@ ActiveRecord::Schema.define(version: 20170210232536) do
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.integer  "ex_type_id_id"
-    t.string   "name",          null: false
+    t.integer  "ex_type_id"
+    t.string   "name",        null: false
     t.string   "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["ex_type_id_id"], name: "index_exercises_on_ex_type_id_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["ex_type_id"], name: "index_exercises_on_ex_type_id", using: :btree
   end
 
   create_table "marks", force: :cascade do |t|
-    t.integer  "exerecise_id"
+    t.integer  "exercise_id"
     t.date     "acomplished_at", null: false
     t.string   "acomplished_in"
     t.time     "ac_time"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170210232536) do
     t.integer  "ac_xreps"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "user_id",        null: false
-    t.index ["exerecise_id"], name: "index_marks_on_exerecise_id", using: :btree
+    t.integer  "user_id"
+    t.index ["exercise_id"], name: "index_marks_on_exercise_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

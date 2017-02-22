@@ -12,7 +12,7 @@
 class ExType < ApplicationRecord
   #include Translatable
 
-  has_many :exercises
+  has_many :exercises, inverse_of: :ex_types, dependent: :destroy
 
   #translate :name
 end

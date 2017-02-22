@@ -3,7 +3,7 @@
 # Table name: marks
 #
 #  id             :integer          not null, primary key
-#  exerecise_id   :integer
+#  exercise_id    :integer
 #  acomplished_at :date             not null
 #  acomplished_in :string
 #  ac_time        :time
@@ -12,7 +12,7 @@
 #  ac_xreps       :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  user_id        :integer          not null
+#  user_id        :integer
 #
 
 require 'test_helper'
