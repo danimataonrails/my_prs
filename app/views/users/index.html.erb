@@ -1,0 +1,8 @@
+<h1><%= title t('.title') %></h1>
+<%= flash_messages %>
+<%= link_to(t('.new'), new_user_path) if policy(User).new? %>
+<table>
+<%= table_head_for :users, [:email, :role] %>
+<%= table_rows_for @users, [:email, :role_name] %>
+</table>
+<%= paginate @users %>

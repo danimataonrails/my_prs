@@ -47,3 +47,15 @@ en:
     new:
       title: New Exercise Type
   hello: "Hello"
+  users:
+    email: Email
+    role: Role
+    role_name: Role
+    edit:
+      title: Edit %{name}
+    index: 
+      title: Users
+      new: New user
+      no_data: No users
+    new:
+      title: New User

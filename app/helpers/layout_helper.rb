@@ -37,9 +37,9 @@ module LayoutHelper
         end.join.html_safe
         if actions
           tds += content_tag :td do
-            [link_to(t('actions.show'), datum),
-              link_to(t('actions.edit'), [:edit, datum]),
-              link_to(t('actions.destroy'), datum, method: :delete)].join('&nbsp').html_safe
+            [policy(datum).show? ? link_to(t('actions.show'), datum) : '',
+              policy(datum).edit? ? link_to(t('actions.edit'), [:edit, datum]) : '',
+              policy(datum).destroy? ? link_to(t('actions.destroy'), datum, method: :delete) : ''].join('&nbsp').html_safe
           end
         end
         html << content_tag(:tr, tds)

@@ -33,4 +33,8 @@ class User < ApplicationRecord
          :trackable, :validatable
          
   has_many :marks, inverse_of: :user, dependent: :destroy
+  
+  def name
+    email
+  end
 end

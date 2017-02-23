@@ -1,0 +1,13 @@
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <% if policy(@user).update_role? %>
+    <%= f.label :role %>
+    <%= f.select :role, User::ROLES %>
+  <% end %>
+  <%= submit_or_cancel %>
+<% end %>

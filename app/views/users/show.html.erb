@@ -1,0 +1,3 @@
+<h1><%= title @user.name %></h1>
+<%= fields_for @user, policy(@user).permitted_show_attributes, :users %>
+<%= cancel_link %>
